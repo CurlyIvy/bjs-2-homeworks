@@ -8,29 +8,20 @@ function compareArrays(firstArr, secondArr) {
     return result;
   }
   // compare arrays
-  result = firstArr.every((item, index) => { 
-    if(index >= secondArr.length) {
-      return false;
-    }
-    let result = false;
-    if(item === secondArr[index]) {
-      result = true;
-    }
-    return result;
-  });
+  result = firstArr.every((item, index) => item === secondArr[index]);
   return result; 
 }
 
 function advancedFilter(arr) {
-  let resultArr = arr.filter((item) => {
+  let resultArr = arr.filter((item) => 
     // positive numbers filter
-    return item > 0;
-  }).filter((item) => {
+    item > 0
+  ).filter((item) => 
     // even three filter
-    return item % 3 === 0;
-  }).map((item) => {
+    item % 3 === 0
+  ).map((item) => 
     // multiply by number
-    return item * 10;
-  });
+    item * 10
+  );
   return resultArr;
 }
