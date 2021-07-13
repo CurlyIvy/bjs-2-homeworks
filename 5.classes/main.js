@@ -17,9 +17,9 @@ secondGradebook.addSubject("geometry");
 secondGradebook.addMarkToSubject("geometry", 5);
 secondGradebook.addMarkToSubject("geometry", 4);
 secondGradebook.addMarkToSubject("geometry", 6);
-secondGradebook.getAverageBySubject("geometry"); // Средний балл по предмету geometry 4.5
-secondGradebook.getAverageBySubject("biology"); // Несуществующий предмет
-secondGradebook.getAverage(); // Средний балл по всем предметам 4.75
+secondGradebook.getAverageBySubject("geometry"); 
+secondGradebook.getAverageBySubject("biology"); 
+secondGradebook.getAverage(); 
 
 let subject = new Subject("test");
 subject.addMark(-1);
@@ -49,4 +49,3 @@ subject.removeMarks(function(item, marks) {
     }
     return !isExist;
 }, 4, 1);
-subject.clear();
