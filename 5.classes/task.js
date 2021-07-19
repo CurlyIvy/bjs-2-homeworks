@@ -100,7 +100,7 @@ class Student {
         if(!this.gradebook.subjectIsExist(subjectName)) {
             this.setSubject(subjectName);
         }
-        this.gradebook.addMarkToSubject(subjectName, mark);
+        this.gradebook.addMarkToSubject(mark, subjectName);
     }
     addMarks(subjectName, ...marks) {
         if(!this.gradebook.subjectIsExist(subjectName)) {
@@ -109,10 +109,10 @@ class Student {
         this.gradebook.addMarksToSubject(subjectName, ...marks);
     }
     removeMark(mark, subjectName) {
-        this.gradebook.removeMarkFromSubject(subjectName, mark);
+        this.gradebook.removeMarkFromSubject(mark, subjectName);
     }
     removeMarks(subjectName, callback, ...marks) {
-        this.gradebook.removeMarkFromSubject(subjectName, callback, ...marks);
+        this.gradebook.removeMarksFromSubject(subjectName, callback, ...marks);
     }
     exclude(reason) {
         this.gradebook.clear();
@@ -148,7 +148,7 @@ class Gradebook {
             this.subjects.splice(index, 1);
         }
     }
-    addMarkToSubject(name, mark) {
+    addMarkToSubject(mark, name) {
         let index = this.findSubjectIndexByName(name);
         if(index >= 0) {
             this.subjects[index].addMark(mark);
@@ -160,7 +160,7 @@ class Gradebook {
             this.subjects[index].addMarks(...marks);
         }
     }
-    removeMarkFromSubject(name, mark) {
+    removeMarkFromSubject(mark, name) {
         let index = this.findSubjectIndexByName(name);
         if(index >= 0) {
             this.subjects[index].removeMark(mark);
