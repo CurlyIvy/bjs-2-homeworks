@@ -29,7 +29,6 @@ class AlarmClock {
             'alarm id is not correct',
             id
         );
-
         if(this.alarmCollection.some((item) => (item.id === id))) {
             console.error('alarm already added');
             return;
@@ -43,11 +42,6 @@ class AlarmClock {
         }
     } 
     getCurrentFormattedTime() {
-        /*const currentDate = new Date(); 
-        const hours = currentDate.getHours() < 10 ? `0${currentDate.getHours()}` : `${currentDate.getHours()}`;
-        const minutes = currentDate.getMinutes() < 10 ? `0${currentDate.getMinutes()}` : `${currentDate.getMinutes()}`;
-        const forrmat = `${hours}:${minutes}`;
-        return forrmat;*/
         return DateForrmatHelper.toString();
     }
     start() {
@@ -56,10 +50,6 @@ class AlarmClock {
         }
     }
     checkClock(alarm) {
-        /*const currentDate = new Date();        
-        const hours = currentDate.getHours() < 10 ? `0${currentDate.getHours()}` : `${currentDate.getHours()}`;
-        const minutes = currentDate.getMinutes() < 10 ? `0${currentDate.getMinutes()}` : `${currentDate.getMinutes()}`;
-        const forrmat = `${hours}:${minutes}`; */
         let time = DateForrmatHelper.toString();
         if(time.toLowerCase() === alarm.time.toLowerCase()) {
             alarm.callback();
