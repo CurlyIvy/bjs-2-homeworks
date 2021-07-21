@@ -3,7 +3,7 @@ let forrmat = DateForrmatHelper.toString();
 let func = multyAction;
 alarmClock.addClock(forrmat, func, getRandomInt(1000));
 alarmClock.addClock(forrmat, test, getRandomInt(1000));
-//alarmClock.addClock(forrmat, () => (console.log(this)), getRandomInt(1000));
+//alarmClock.addClock(forrmat, () => (console.log(this)), getRandomInt(1000)); // this -> object Window
 alarmClock.start();
 
 
@@ -12,6 +12,7 @@ function getRandomInt(max) {
 }
 
 function singleAction() {
+    // this -> object AlarmClock
     console.log(singleAction.name);
     console.log('all alarms befor:');
     this.printAlarms();
@@ -21,6 +22,7 @@ function singleAction() {
 }
 
 function multyAction() {
+    // this -> object AlarmClock
     console.log(multyAction.name);
     console.log('all alarms:');
     this.printAlarms();   
